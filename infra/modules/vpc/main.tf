@@ -9,7 +9,7 @@ resource "aws_vpc" "vpc" {
     }
 }
 
-#Create Public Subnet
+#Create Public Subnet 1
 resource "aws_subnet" "public-subnet-a" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = var.public-subnet-a-cidr
@@ -18,6 +18,18 @@ resource "aws_subnet" "public-subnet-a" {
 
   tags = {
     Name = "${var.project-name}-pub-subnet-a"
+  }
+}
+
+#Create Public Subnet 2
+resource "aws_subnet" "public-subnet-b" {
+  vpc_id                  = aws_vpc.vpc.id
+  cidr_block              = var.public-subnet-b-cidr
+  availability_zone       = var.az-2
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = "${var.project-name}-pub-subnet-b"
   }
 }
 

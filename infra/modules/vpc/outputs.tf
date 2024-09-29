@@ -18,10 +18,18 @@ output "priv-subnet-a-id" {
   value = aws_subnet.private-subnet-a.id
 }
 
-output "pub-subnet-cidr-block" {
+output "pub-subnet-a-cidr-block" {
   value = aws_subnet.public-subnet-a.cidr_block
 }
 
 output "priv-subnet-cidr-block" {
   value = aws_subnet.private-subnet-a.cidr_block
+}
+
+output "pub-subnet-b-id" {
+  value = aws_subnet.public-subnet-b.id
+}
+
+output "pub-subnet-b-cidr-block" {
+  value = aws_subnet.public-subnet-b.cidr_block
 }
